@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "78664058012",
+    "firebase_url": "https://pazaak-comp350.firebaseio.com",
+    "project_id": "pazaak-comp350",
+    "storage_bucket": "pazaak-comp350.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78664058012:android:a4fa93d8b23fc41b",
+        "android_client_info": {
+          "package_name": "com.pazaak.prototype.pazaakprototype"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78664058012-qaednfiugkuev13ka68kqk94fd3fb0vs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pazaak.prototype.pazaakprototype",
+            "certificate_hash": "c9de8010a81fffced56c6b04f1964b5b96ec9fd5"
+          }
+        },
+        {
+          "client_id": "78664058012-kcm5k2ngacr3n5p1ge4ljc12db40941b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiV7iwXkKBNg57Ud7WWLprQvrrJ_ySf20"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "78664058012-kcm5k2ngacr3n5p1ge4ljc12db40941b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

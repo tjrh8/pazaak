@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">PazaakPrototype</string>
+    <string name="pazaak">Pazaak</string>
+    <string name="cardLayout">Card layout</string>
+    <string name="deckCount">deckCount</string>
+    <string name="done_db">SAVE</string>
+	<string name="revert">REVERT</string>
+
+	<string name="contents">
+		Pazaak consists of:\n\n
+		\t 2 gameboards\n
+		\t 1 main deck\n
+		\t 2 Sidedecks\n
+		\t 5 card types\n\n
+	</string>
+	<string name="objective">Object Of Game:\n
+		\t Win a set by getting closer to 20 points than your opponent without going over (busting) or by filling up your gameboard without going over 20 points.\n
+		\t The first player to win 3 sets, wins the entire match.\n\n
+	</string>
+	<string name="gameplay">Gameplay:\n\n
+		At the start of each respective players turn they will be dealt a card onto their gameboard from the main deck\n
+	</string>
+	<string name="gameplay2">
+		That player may either play a card, end their turn, or stand.\n
+	</string>
+	<string name="playCard">Play a card:\n
+		Each player has a hand of 4 cards to play. Players do not draw anymore cards for the rest of the match.
+	</string>
+    <string name="rules">How to Play:\n
+	In the game of Pazaak, there are three different decks used. The main deck, which consists of cards numbered 1 through 10 with four of each. The other two decks are the side decks, which are used by the two players, these decks have 10 cards each, selected by the user of the deck.\n
+	When the game starts, each player will receive 4 randomly picked cards from their side decks, This is their hand, it is not to be seen by the opponent. The player who goes first draws a card from the main deck and plays it on the table. After this is done, the player must choose to either play a card from their hand or to end their turn. The player must remember that they can only place one card from their hand per turn and no other cards can be drawn from their side deck. \n
+	when ending the turn the player can either stand or end turn.\n
+	End Turn: If end turn is chosen, on the next turn the player must draw a card from the main deck and play it. The player must continue doing this until they stand, bust, fill the table or their score is exactly at 20.\n
+	Stand: If stand is chosen, the player keeps their current amount of cards until the end of the set and cannot play anymore cards. The opponent continues playing card until they have chosen stand, bust, filled the table, or their score is exactly at 20. It is automatically a stand if a player reaches exactly 20. \n
+	Once the player’s turn is over, the play moves to the opponent. The opponent does exactly what the player just did. The play passes between the two players until one player has won the set. \n
+	There are 3 sets in a match, first player to win 3 sets, wins the match.\n\n
+
+Pazaak Cards:\n
+	There are three decks that are used in Pazaak, The Main Deck and The Side Deck (x2) \n
+	The main deck holds cards labeled 1-10 with 4 of each. \n
+	The Side decks contain 10 special cards chosen by the player before the game. In each match, 4 cards are chosen at random from the players side deck and used as the players hand, the player can play one card at any desired time during their turns in a match. \n
+	The different types of cards that can be found in a players side deck are Plus Cards, Minus Cards, Plus of Minus Cards, +/- 1 or 2 Card, and The Tie-Breaker Card.\n
+	Plus cards are blue. These add the value written on the card to the players sum of cards on their game board when played. The card values range from 1 to 6 points.\n
+	Minus cards are red. These cards are the same as the plus cards except they subtract value from the players sum. These cards are mainly used when a player goes over a total of 20 to bring the back down to or below 20. \n
+	Plus of Minus cards are used to subtract or add to the players total. The player chooses upon turn whether to subtract or minus the points from their sum. Like the Plus and Minus cards, these cards also range from 1 to 6.\n
+	The Tie-Breaker Card is used as a +/- card, but when there is a tie, the player who played the tie-breaker card wins.\n
+	Without a side deck, it would be very hard to win. The side deck is one of the key decks in the game of Pazaak. The player must remember, they only get 4 cards from their side deck per match.\n\n
+
+How to Win:\n
+	The three ways to win a set is if the opponent busts, the player fills the table or gets a higher score that the opponent busts, the player fills the table or gets a higher score than the opponent that is 20 and below. \n
+	A bust is when a player draws or places a card that makes their sum above 20! \n
+	A player can only place 9 cards on the table per set. Rarely, a player will place the maximum amount of cards on the table. If a player does so and the sum is less that 20, this player automatically wins, even if the opponents sum is higher and not a bust. \n
+	The player with the highest score(without busting) after both players have chosen to stand, wins the set.\n\n\n</string>
+	<string name="how_to_play">How to Play</string>
+	<string name="walkthrough">Walkthrough</string>
+    <string name="stand">Stand</string>
+	<string name="end_turn">End Turn</string>
+	<string name="plusPrompt">+</string>
+	<string name="minusPrompt">-</string>
+	<string name="pmPrompt">Plus or Minus</string>
+
+</resources>
