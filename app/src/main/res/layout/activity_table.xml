@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2_2"
+    tools:context=".Table">
+
+
+
+
+    <ImageView
+        android:id="@+id/p1Slot0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p1Slot3"
+        app:layout_constraintEnd_toStartOf="@+id/p1Slot1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p1Slot1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p1Slot4"
+        app:layout_constraintEnd_toStartOf="@+id/p1Slot2"
+        app:layout_constraintStart_toEndOf="@+id/p1Slot0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p1Slot2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p1Slot5"
+        app:layout_constraintEnd_toStartOf="@+id/p2Slot0"
+        app:layout_constraintStart_toEndOf="@+id/p1Slot1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p1Slot3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p1Slot6"
+        app:layout_constraintEnd_toStartOf="@+id/p1Slot4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/p1Slot0"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p1Slot4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p1Slot7"
+        app:layout_constraintEnd_toStartOf="@+id/p1Slot5"
+        app:layout_constraintStart_toEndOf="@+id/p1Slot3"
+        app:layout_constraintTop_toBottomOf="@+id/p1Slot1"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p1Slot5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="36dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p1Slot8"
+        app:layout_constraintEnd_toStartOf="@+id/p2Slot3"
+        app:layout_constraintStart_toEndOf="@+id/p1Slot4"
+        app:layout_constraintTop_toBottomOf="@+id/p1Slot2"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p1Slot6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="93dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/p1Slot7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/p1Slot3"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p1Slot7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="93dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/p1Slot8"
+        app:layout_constraintStart_toEndOf="@+id/p1Slot6"
+        app:layout_constraintTop_toBottomOf="@+id/p1Slot4"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p1Slot8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="93dp"
+        android:layout_marginEnd="36dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/p2Slot6"
+        app:layout_constraintStart_toEndOf="@+id/p1Slot7"
+        app:layout_constraintTop_toBottomOf="@+id/p1Slot5"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+
+    <ImageView
+        android:id="@+id/p2Slot0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p2Slot3"
+        app:layout_constraintEnd_toStartOf="@+id/p2Slot1"
+        app:layout_constraintStart_toEndOf="@+id/p1Slot2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p2Slot1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p2Slot4"
+        app:layout_constraintEnd_toStartOf="@+id/p2Slot2"
+        app:layout_constraintStart_toEndOf="@+id/p2Slot0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p2Slot2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="0dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p2Slot5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/p2Slot1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p2Slot3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p2Slot6"
+        app:layout_constraintEnd_toStartOf="@+id/p2Slot4"
+        app:layout_constraintStart_toEndOf="@+id/p1Slot5"
+        app:layout_constraintTop_toBottomOf="@+id/p2Slot0"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p2Slot4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p2Slot7"
+        app:layout_constraintEnd_toStartOf="@+id/p2Slot5"
+        app:layout_constraintStart_toEndOf="@+id/p2Slot3"
+        app:layout_constraintTop_toBottomOf="@+id/p2Slot1"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p2Slot5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="5dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toTopOf="@+id/p2Slot8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/p2Slot4"
+        app:layout_constraintTop_toBottomOf="@+id/p2Slot2"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p2Slot6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="93dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/p2Slot7"
+        app:layout_constraintStart_toEndOf="@+id/p1Slot8"
+        app:layout_constraintTop_toBottomOf="@+id/p2Slot3"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p2Slot7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="93dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/p2Slot8"
+        app:layout_constraintStart_toEndOf="@+id/p2Slot6"
+        app:layout_constraintTop_toBottomOf="@+id/p2Slot4"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/p2Slot8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="93dp"
+        android:layout_marginEnd="84dp"
+        android:contentDescription="@string/cardLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/p2Slot7"
+        app:layout_constraintTop_toBottomOf="@+id/p2Slot5"
+        app:srcCompat="@drawable/empty"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/bStand"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="5dp"
+        android:background="@color/spaceGray"
+        android:layout_marginEnd="403dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/stand"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bEndTurn"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/spaceGray"
+        android:text="@string/end_turn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <ImageButton
+        android:id="@+id/p1Hand1"
+        android:layout_width="52dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="110dp"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:background="@drawable/empty_dark"
+        android:contentDescription="@string/cardLayout"
+        android:padding="0dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/empty_dark"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bStand"
+        app:srcCompat="@drawable/empty_dark"
+        tools:background="@drawable/empty_dark"
+        tools:srcCompat="@drawable/empty_dark" />
+
+    <ImageButton
+        android:id="@+id/p1Hand2"
+        android:layout_width="52dp"
+        android:layout_height="72dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/empty_dark"
+        android:contentDescription="@string/cardLayout"
+        android:padding="0dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/empty_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/p1Hand1"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/p1Hand3"
+        android:layout_width="52dp"
+        android:layout_height="72dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/empty_dark"
+        android:contentDescription="@string/cardLayout"
+        android:padding="0dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/empty_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/p1Hand2" />
+
+    <ImageButton
+        android:id="@+id/p1Hand4"
+        android:layout_width="52dp"
+        android:layout_height="72dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/empty_dark"
+        android:contentDescription="@string/cardLayout"
+        android:padding="0dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/empty_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/p1Hand3"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/p1Score"
+        android:layout_width="78dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="105dp"
+        android:fontFamily="@font/verdanab"
+        android:text="P1 Score: "
+        android:textColor="@color/brightBlue"
+        app:layout_constraintBottom_toTopOf="@+id/bStand"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+    <TextView
+        android:id="@+id/p2Score"
+        android:layout_width="78dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="105dp"
+        android:fontFamily="@font/verdanab"
+        android:text="P2 Score: "
+        android:textColor="@color/brightRed"
+        app:layout_constraintBottom_toTopOf="@+id/bEndTurn"
+        app:layout_constraintLeft_toRightOf="@+id/p1Hand4"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <TextView
+        android:id="@+id/p1ScoreCounter"
+        android:layout_marginStart="20dp"
+        android:paddingBottom="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:fontFamily="@font/verdanab"
+        android:textColor="@color/brightBlue"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/bStand"
+
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="51dp" />
+    <TextView
+        android:id="@+id/p2ScoreCounter"
+        android:layout_marginEnd="30dp"
+        android:paddingBottom="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:fontFamily="@font/verdanab"
+        android:textColor="@color/brightRed"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/bEndTurn"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="51dp" />
+
+</android.support.constraint.ConstraintLayout>
