@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeckBuilder"
+    android:background="@drawable/bg2_2">
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/pm6_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/pm5_db"
+        app:layout_constraintTop_toBottomOf="@+id/minus6_db"
+        app:srcCompat="@drawable/pm6"
+        />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/pm5_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/pm4_db"
+        app:layout_constraintTop_toBottomOf="@+id/minus5_db"
+        app:srcCompat="@drawable/pm5" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/pm4_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/pm3_db"
+        app:layout_constraintTop_toBottomOf="@+id/minus4_db"
+        app:srcCompat="@drawable/pm4" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/pm3_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/pm2_db"
+        app:layout_constraintTop_toBottomOf="@+id/minus3_db"
+        app:srcCompat="@drawable/pm3" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/pm2_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/pm1_db"
+        app:layout_constraintTop_toBottomOf="@+id/minus2_db"
+        app:srcCompat="@drawable/pm2" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/pm1_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/minus1_db"
+        app:srcCompat="@drawable/pm1" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/minus6_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/minus5_db"
+        app:layout_constraintTop_toBottomOf="@+id/plus6_db"
+        app:srcCompat="@drawable/minus6" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/minus5_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/minus4_db"
+        app:layout_constraintTop_toBottomOf="@+id/plus5_db"
+        app:srcCompat="@drawable/minus5" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/minus4_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/minus3_db"
+        app:layout_constraintTop_toBottomOf="@+id/plus4_db"
+        app:srcCompat="@drawable/minus4" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/minus3_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/minus2_db"
+        app:layout_constraintTop_toBottomOf="@+id/plus3_db"
+        app:srcCompat="@drawable/minus3" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/minus2_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/minus1_db"
+        app:layout_constraintTop_toBottomOf="@+id/plus2_db"
+        app:srcCompat="@drawable/minus2" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/minus1_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plus1_db"
+        app:srcCompat="@drawable/minus1" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/plus6_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/plus5_db"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus6" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/plus5_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/plus4_db"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus5" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/plus4_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/plus3_db"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus4" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/plus3_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/plus2_db"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus3" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/plus2_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/plus1_db"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus2" />
+
+    <ImageButton
+        android:scaleType="centerInside"
+        android:padding="7dp"
+        android:id="@+id/plus1_db"
+        android:contentDescription="@string/cardLayout"
+        android:layout_width="68dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus1" />
+
+    <TextView
+        android:id="@+id/deckCount"
+        android:layout_width="123dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="48dp"
+        android:background="@color/spaceGray"
+        android:fontFamily="@font/verdanab"
+        android:text="@string/deckCount"
+        android:textColor="@color/sithYellow"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@+id/plus6_db"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/deckBuilderDone"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="32dp"
+        android:alpha=".25"
+        android:background="@color/trans_green"
+        android:fontFamily="@font/verdanab"
+        android:text="@string/done_db"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/revert_db"
+        app:layout_constraintStart_toEndOf="@+id/minus6_db" />
+
+    <Button
+        android:id="@+id/revert_db"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@color/brightRed"
+        android:fontFamily="@font/verdanab"
+        android:text="@string/revert"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/clear_db"
+        app:layout_constraintStart_toStartOf="@+id/deckBuilderDone" />
+
+    <Button
+        android:id="@+id/clear_db"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
+        android:background="@color/sithYellow"
+        android:fontFamily="@font/verdanab"
+        android:text="CLEAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/revert_db" />
+
+</android.support.constraint.ConstraintLayout>

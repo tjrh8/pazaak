@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spaceGray"
+    tools:context=".MainMenu"
+    tools:layout_editor_absoluteY="25dp">
+
+    <ImageButton
+        android:id="@+id/plusSign"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseOne"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/main1" />
+
+    <ImageButton
+        android:id="@+id/minusSign"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:paddingRight="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/chooseOne"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/main2" />
+    <TextView
+        android:id="@+id/chooseOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Choose One"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        app:fontFamily="@font/verdanab"
+        />
+
+
+</android.support.constraint.ConstraintLayout>
