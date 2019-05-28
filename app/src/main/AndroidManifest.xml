@@ -13,39 +13,17 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MainMenu"
-            android:screenOrientation="landscape">
+            android:name=".MainMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".GameMenu"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".DeckBuilder"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".TutorialMenu"
-            android:screenOrientation="landscape"/>
-        <activity
-            android:name=".SetAIDifficulty"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".Table"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".Rulebook"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".Walkthrough"
-            android:screenOrientation="landscape" />
-        <activity android:name=".Testing"
-            android:screenOrientation="landscape" />
-        <activity android:name=".DeckBuilderV2"
-            android:screenOrientation="landscape" />
+        <activity android:name=".GameMenu"/>
+        <activity android:name=".SetAIDifficulty"/>
+        <activity android:name=".Table"/>
+        <activity android:name=".Walkthrough"/>
+        <activity android:name=".DeckBuilderV2"/>
     </application>
 
 </manifest>
