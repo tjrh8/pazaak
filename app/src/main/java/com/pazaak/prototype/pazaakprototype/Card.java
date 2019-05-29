@@ -1,17 +1,15 @@
 package com.pazaak.prototype.pazaakprototype;
 
-import android.graphics.drawable.Drawable;
-
-public class Card {
-    private int cardId;
+class Card {
+    
     private int cardType;
     private int cardValue;
-    public static final int PLUS = 0;
-    public static final int MINUS = 1;
-    public static final int PM = 2;
-    public static final int MAIN = 3;
-    public Card(int type, int value)
-    {
+    static final int PLUS = 0;
+    static final int MINUS = 1;
+    static final int PM = 2;
+    static final int MAIN = 3;
+
+    Card(int type, int value) {
         if(type > MAIN || type < PLUS)
             this.cardType = MAIN;
         else
@@ -22,14 +20,14 @@ public class Card {
         else
             this.cardValue = value;
     }
-    public int getType()
+
+    int getType()
     {
         return this.cardType;
     }
 
-    public int getValue()
-    {
-        int cardVal = 0;
+    int getValue() {
+        int cardVal;
         if (this.cardType == MINUS)
         {
             cardVal = (-1) * this.cardValue;
@@ -40,7 +38,8 @@ public class Card {
         }
         return cardVal;
     }
-    public int getImage()
+
+    int getImage()
     {
         switch (this.cardType){
             case PLUS: switch(this.cardValue){
@@ -87,9 +86,10 @@ public class Card {
             default: return R.drawable.ic_launcher_background;
         }
     }
-    public static Card[] getSideDeck(boolean cards[])
+
+    static Card[] getSideDeck(boolean[] cards)
     {
-        Card deck[] = new Card[10];
+        Card[] deck = new Card[10];
         int count = 0;
         for(int i = 0; i < 18 && count < 10; i++)
         {

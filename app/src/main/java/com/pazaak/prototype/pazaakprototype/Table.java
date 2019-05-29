@@ -2,11 +2,8 @@ package com.pazaak.prototype.pazaakprototype;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,27 +12,16 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Table extends AppCompatActivity
 {
-    final int END_TURN = 0;
-    final int STAND = 1;
-    final int PLAY_CARD = 2;
     private GameAI aiForGame;
     private final static int ROUNDS_NEEDED_TO_WIN = 3;
-    private int roundsWon[];
-    //Card[] MainDeck = new Card[40];
+    private int[] roundsWon;
     List<Card> MainDeck;
     final int MAX_CARDS_IN_DECK = 40;
     String p1Count, p2Count;
@@ -44,16 +30,14 @@ public class Table extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        this.MainDeck = new ArrayList<Card>();
+        this.MainDeck = new ArrayList<>();
         this.aiForGame = new GameAI(setDiff());
         this.roundsWon = new int[2];
-        this.roundsWon[0] = 0;
-        this.roundsWon[1] = 0;
         setContentView(R.layout.activity_table);
         final int[] p1CardsPlayed = {0};
         final int[] p2CardsPlayed = {0};
 
-        final Card player1Hand[] = assignCards();
+        final Card[] player1Hand = assignCards();
 
 
         final Random generator = new Random();
@@ -62,9 +46,7 @@ public class Table extends AppCompatActivity
 
 
         final int[] p1Value = {0};
-        p1Value[0] = 0;
         final int[] p2Value = {0};
-        p2Value[0] = 0;
         final boolean[] yourTurn = {true};
         final boolean[] p1Stand = {false};
         final boolean[] p2Stand = {false};
@@ -76,19 +58,13 @@ public class Table extends AppCompatActivity
             MainDeck.add(new Card(Card.MAIN, (i + 1) % 11));
         }
 
-
-        final ImageView board1Slots[] = {findViewById(R.id.p1Slot0), (findViewById(R.id.p1Slot1)), findViewById(R.id.p1Slot2), findViewById(R.id.p1Slot3), findViewById(R.id.p1Slot4),
+        final ImageView[] board1Slots = {findViewById(R.id.p1Slot0), (findViewById(R.id.p1Slot1)), findViewById(R.id.p1Slot2), findViewById(R.id.p1Slot3), findViewById(R.id.p1Slot4),
                 findViewById(R.id.p1Slot5), findViewById(R.id.p1Slot6), findViewById(R.id.p1Slot7), findViewById(R.id.p1Slot8)};
 
 
-        final ImageView board2Slots[] = {findViewById(R.id.p2Slot0), findViewById(R.id.p2Slot1), findViewById(R.id.p2Slot2), findViewById(R.id.p2Slot3), findViewById(R.id.p2Slot4),
+        final ImageView[] board2Slots = {findViewById(R.id.p2Slot0), findViewById(R.id.p2Slot1), findViewById(R.id.p2Slot2), findViewById(R.id.p2Slot3), findViewById(R.id.p2Slot4),
                 findViewById(R.id.p2Slot5), findViewById(R.id.p2Slot6), findViewById(R.id.p2Slot7), findViewById(R.id.p2Slot8)};
 
-
-        final int finalP2CardsPlayed = p2CardsPlayed[0];
-        final int finalP2Value = p2Value[0];
-        final boolean finalP2Stand = p2Stand[0];
-        final boolean finalP2Stand1 = p2Stand[0];
         final TextView p1CurrentScore = findViewById(R.id.p1ScoreCounter);
         final TextView p2CurrentScore = findViewById(R.id.p2ScoreCounter);
 
@@ -101,7 +77,7 @@ public class Table extends AppCompatActivity
         p1CurrentScore.setText(p1Count);
         p1CardsPlayed[0]++;
 
-        final Button endTurn = (Button) (findViewById(R.id.bEndTurn));
+        final Button endTurn = (findViewById(R.id.bEndTurn));
 
         endTurn.setOnClickListener(new View.OnClickListener()
         {
@@ -121,7 +97,7 @@ public class Table extends AppCompatActivity
                 /*
                  */
 
-                if (p2Stand[0] == false)
+                if (!p2Stand[0])
                 {
 
                     p2Value[0] = p2EndTurn(p2Value[0], p2CardsPlayed[0], board2Slots);
@@ -138,14 +114,14 @@ public class Table extends AppCompatActivity
                     }, 1000);
                     p2CardsPlayed[0]++;
 
-                    List<Card> copyOfMainDeck = new ArrayList<Card>(MainDeck);
+                    List<Card> copyOfMainDeck = new ArrayList<>(MainDeck);
 
                     final Card p2CardToPlay = aiForGame.getCard(p2Value[0], copyOfMainDeck);
                     if (p2CardToPlay != null)
                     {
                         if (p2CardToPlay.getType() == Card.PM)
                         {
-                            if (aiForGame.choosePlusOrMinus(p2Value[0], p2CardToPlay) == GameAI.PLUS)
+                            if (aiForGame.choosePlusOrMinus() == GameAI.PLUS)
                             {
                                 p2Value[0] += p2CardToPlay.getValue();
                             }
@@ -185,28 +161,7 @@ public class Table extends AppCompatActivity
                     yourTurn[0] = true;
                 }
 
-//                if (p2Value[0] < 16)
-//                {
-//                    p2Value[0] = p2EndTurn(p2Value[0], p2CardsPlayed[0], board2Slots);
-//                    p2Count = Integer.toString(p2Value[0]);
-//
-//                    Handler handler = new Handler();
-//                    handler.postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            p2CurrentScore.setText(p2Count);
-//                        }
-//                    } , 1000);
-//                    p2CardsPlayed[0]++;
-//                    yourTurn[0] = true;
-//                }
-//                else
-//                {
-//                    p2Stand[0] = true;
-//                    yourTurn[0] = true;
-//                }
-
-                if (yourTurn[0] == true && p1Stand[0] == false)
+                if (!p1Stand[0])
                 {
                     p1Value[0] = p1Turn(p1Value[0], p1CardsPlayed[0], board1Slots);
                     p1Count = Integer.toString(p1Value[0]);
@@ -219,18 +174,14 @@ public class Table extends AppCompatActivity
                         }
                     } , 2000);
 
-
-
                     p1CardsPlayed[0]++;
                     yourTurn[0] = false;
-
-
                 }
                 p1PlayedACardThisTurn[0] = false;
             }
         });
 
-        final Button bStand1 = (Button) (findViewById(R.id.bStand));
+        final Button bStand1 = (findViewById(R.id.bStand));
 
         bStand1.setOnClickListener(new View.OnClickListener()
         {
@@ -238,7 +189,7 @@ public class Table extends AppCompatActivity
             public void onClick(View view)
             {
                 p1Stand[0] = true;
-                while (p1Stand[0] == true && p2Stand[0] == false)
+                while (p1Stand[0] && !p2Stand[0])
                 {
                     p2Value[0] = p2EndTurn(p2Value[0], p2CardsPlayed[0], board2Slots);
                     p2Count = Integer.toString(p2Value[0]);
@@ -256,14 +207,14 @@ public class Table extends AppCompatActivity
 
                     p2CardsPlayed[0]++;
 
-                    List<Card> copyOfMainDeck = new ArrayList<Card>(MainDeck);
+                    List<Card> copyOfMainDeck = new ArrayList<>(MainDeck);
 
                     final Card p2CardToPlay = aiForGame.getCard(p2Value[0], copyOfMainDeck);
                     if (p2CardToPlay != null)
                     {
                         if (p2CardToPlay.getType() == Card.PM)
                         {
-                            if (aiForGame.choosePlusOrMinus(p2Value[0], p2CardToPlay) == GameAI.PLUS)
+                            if (aiForGame.choosePlusOrMinus() == GameAI.PLUS)
                             {
                                 p2Value[0] += p2CardToPlay.getValue();
                             }
@@ -304,7 +255,7 @@ public class Table extends AppCompatActivity
 
                 }
                 boolean shouldReset = checkifEnd(p1Stand[0], p2Stand[0], p1Value[0], p2Value[0]);
-                if (shouldReset == true)
+                if (shouldReset)
                 {
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
@@ -350,45 +301,25 @@ public class Table extends AppCompatActivity
 
         });
 
-
-
-        /*
-         * Decided to help out here a bit :) wanted to get familiar with the java file
-         * Created/Displayed a temporary hand for player 1
-         * Feel free to modify/expand/delete
-         */
-
         /* generates random values for card retrieval in board1 slots from 0 - (board1.length - 1)*/
-        //int randomCardValue = generator.nextInt(board1.length);
-
         final ImageButton board1hand1 = findViewById(R.id.p1Hand1);
         final ImageButton board1hand2 = findViewById(R.id.p1Hand2);
         final ImageButton board1hand3 = findViewById(R.id.p1Hand3);
         final ImageButton board1hand4 = findViewById(R.id.p1Hand4);
 
         /* Sets images of random card obtained into empty hand slots */
-
         board1hand1.setImageResource(player1Hand[0].getImage());
-        //randomCardValue = generator.nextInt(board1.length);
         board1hand2.setImageResource(player1Hand[1].getImage());
-        //randomCardValue = generator.nextInt(board1.length);
         board1hand3.setImageResource(player1Hand[2].getImage());
-        //randomCardValue = generator.nextInt(board1.length);
         board1hand4.setImageResource(player1Hand[3].getImage());
 
-
-
-
-
-        //Added as of Nov. 4th
-
-        //TODO fix hand card 1
+        // hand card 1
         board1hand1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                if (p1PlayedACardThisTurn[0] == false)
+                if (!p1PlayedACardThisTurn[0])
                 {
 
 
@@ -418,13 +349,13 @@ public class Table extends AppCompatActivity
             }
         });
 
-        //TODO fix hand card 2
+        // hand card 2
         board1hand2.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                if (p1PlayedACardThisTurn[0] == false)
+                if (!p1PlayedACardThisTurn[0])
                 {
                     p1Value[0] = p1PlayCard(p1Value[0], p1CardsPlayed[0], player1Hand[1], board1Slots);
                     p1Count = Integer.toString(p1Value[0]);
@@ -450,14 +381,14 @@ public class Table extends AppCompatActivity
             }
         });
 
-        //TODO fix hand card 3
+        //hand card 3
         board1hand3.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
 
-                if (p1PlayedACardThisTurn[0] == false)
+                if (!p1PlayedACardThisTurn[0])
                 {
                     p1Value[0] = p1PlayCard(p1Value[0], p1CardsPlayed[0], player1Hand[2], board1Slots);
                     p1Count = Integer.toString(p1Value[0]);
@@ -484,13 +415,13 @@ public class Table extends AppCompatActivity
             }
         });
 
-        //TODO fix hand card 4
+        // hand card 4
         board1hand4.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                if (p1PlayedACardThisTurn[0] == false)
+                if (!p1PlayedACardThisTurn[0])
                 {
                     p1Value[0] = p1PlayCard(p1Value[0], p1CardsPlayed[0], player1Hand[3], board1Slots);
                     p1Count = Integer.toString(p1Value[0]);
@@ -519,18 +450,15 @@ public class Table extends AppCompatActivity
 
     }
 
-    protected int p1PlayCard(int currentValue, int cardsPlayed, Card cardToPlay, ImageView board[])
+    protected int p1PlayCard(int currentValue, int cardsPlayed, Card cardToPlay, ImageView[] board)
     {
         board[cardsPlayed].setImageResource(cardToPlay.getImage());
-        int val = 0;
+        int val;
 
         if (cardToPlay.getType() == Card.PM)
         {
-            //PlusMinusPrompt myPrompt = new PlusMinusPrompt();
-            //myPrompt.shower();
             int type;
             type = PMType(cardToPlay.getValue());
-            //type = myPrompt.returnType();
             System.out.println("Card Value Type" + type);
             if (type == Card.PLUS)
             {
@@ -549,13 +477,13 @@ public class Table extends AppCompatActivity
         return currentValue + val;
     }
 
-    protected void handleMessage(Message mesg)
+    protected void handleMessage()
     {
         throw new RuntimeException();
     }
     protected int PMType(int cardToPlayValue)
     {
-        final int val[] = {0};
+        final int[] val = {0};
         final AlertDialog dialog = new AlertDialog.Builder(this)
                 .setView(getLayoutInflater().inflate(R.layout.activity_pmpopup, null))
                 .create();
@@ -572,7 +500,7 @@ public class Table extends AppCompatActivity
             public void onClick(View v) {
                 val[0] = Card.PLUS;
                 dialog.dismiss();
-                handleMessage(null);
+                handleMessage();
             }
         });
         minus.setOnClickListener(new View.OnClickListener() {
@@ -580,7 +508,7 @@ public class Table extends AppCompatActivity
             public void onClick(View v) {
                 val[0] = Card.MINUS;
                 dialog.dismiss();
-                handleMessage(null);
+                handleMessage();
             }
         });
 
@@ -596,9 +524,9 @@ public class Table extends AppCompatActivity
     }
 
     //Returns the new value of the board
-    protected int p1Turn(int currentValue, int cardsPlayed, ImageView board[])
+    protected int p1Turn(int currentValue, int cardsPlayed, ImageView[] board)
     {
-        int returnedValue = 0;
+        int returnedValue;
         returnedValue = p1EndTurn(currentValue, cardsPlayed, board);
 
         return returnedValue;
@@ -618,7 +546,7 @@ public class Table extends AppCompatActivity
 
     } */
 
-    protected int p1EndTurn(int currentValue, final int cardsPlayed, final ImageView board[])
+    protected int p1EndTurn(int currentValue, final int cardsPlayed, final ImageView[] board)
     {
         Random getMainDeckCard = new Random();
         //Card cardToDraw = MainDeck[(getMainDeckCard.nextInt(40) + 1) % 11];
@@ -651,7 +579,7 @@ public class Table extends AppCompatActivity
         return cardToDraw.getValue() + curVal;
     } */
 
-    protected int p2EndTurn(int curVal, final int cardsPlayed, final ImageView board[])
+    protected int p2EndTurn(int curVal, final int cardsPlayed, final ImageView[] board)
     {
 
         /*
@@ -777,14 +705,15 @@ public class Table extends AppCompatActivity
     public Card[] assignCards()
     {
         Bundle extra = getIntent().getExtras();
-        List<Card> playerDeck = new ArrayList<Card>();
+        List<Card> playerDeck = new ArrayList<>();
+        assert extra != null;
         if (extra.containsKey("cards") && (extra.getBooleanArray("cards")) != null)
         {
             playerDeck.addAll(Arrays.asList(Card.getSideDeck(extra.getBooleanArray("cards"))));
         }
 
         Random getRandomHandGen = new Random();
-        Card handToReturn[] = new Card[4];
+        Card[] handToReturn = new Card[4];
         int cardsInHand = 0;
         while (cardsInHand < 4)
         {
@@ -798,7 +727,7 @@ public class Table extends AppCompatActivity
     protected int setDiff()
     {
         Bundle extra = getIntent().getExtras();
-        int diff = extra.getInt("diff");
-        return diff;
+        assert extra != null;
+        return extra.getInt("diff");
     }
 }

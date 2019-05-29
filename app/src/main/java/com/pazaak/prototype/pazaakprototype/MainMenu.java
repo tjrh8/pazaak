@@ -1,17 +1,15 @@
 package com.pazaak.prototype.pazaakprototype;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.app.Activity;
-import android.widget.ProgressBar;
 
 public class MainMenu extends AppCompatActivity
 {
-    public boolean cards[];// = new boolean[18]; //KEVIN Testing
+    public boolean[] cards;// = new boolean[18]; //KEVIN Testing
     private static final int DECK_BUILDER = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -76,7 +74,7 @@ public class MainMenu extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == DECK_BUILDER && resultCode == Activity.RESULT_OK)
         {
-            boolean temp[] = data.getBooleanArrayExtra("cards");
+            boolean[] temp = data.getBooleanArrayExtra("cards");
             /*for(int i = 0; i < 18; i++)
                 cards[i] = temp[i];*/
             System.arraycopy(temp, 0, cards, 0, 18);

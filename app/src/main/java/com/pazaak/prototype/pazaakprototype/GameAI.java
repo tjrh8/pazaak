@@ -2,31 +2,28 @@ package com.pazaak.prototype.pazaakprototype;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-public class GameAI
+class GameAI
 {
     private int difficulty;
-    public static final int EASY = 2;
-    public static final int MEDIUM = 1;
-    public static final int HARD = 0;
-    public static boolean PLUS = false;
-    public static boolean MINUS = true;
+    static final int EASY = 2;
+    static final int MEDIUM = 1;
+    static final int HARD = 0;
+    static boolean PLUS = false;
+    private static boolean MINUS = true;
     private List<Card> aiDeckAndHand;
     private boolean plusOrMinus;
-    public GameAI(int aiDifficulty)
+    GameAI(int aiDifficulty)
     {
-        this.aiDeckAndHand = new ArrayList<Card>();
+        this.aiDeckAndHand = new ArrayList<>();
         this.difficulty = aiDifficulty;
         setAiDeck();
         trimDeck();
         this.plusOrMinus = MINUS;
     }
-    public boolean shouldStand(int aiScore, List<Card> mainDeck)
+    boolean shouldStand(int aiScore, List<Card> mainDeck)
     {
-        ///mainDeck.remove(0);
-        List<Card> mainDeckCopy = new ArrayList<Card>(mainDeck);
+        List<Card> mainDeckCopy = new ArrayList<>(mainDeck);
         float average = getDeckAverage(mainDeckCopy);
-        //if(average + aiScore <= 20)
-            //return true;
 
         return (average + aiScore - difficulty) > 20;
     }
@@ -94,7 +91,7 @@ public class GameAI
             aiDeckAndHand.remove(handSelector.nextInt(aiDeckAndHand.size()) % aiDeckAndHand.size());
         }
     }
-    public Card getCard(int aiScore, List<Card> mainDeck)
+    Card getCard(int aiScore, List<Card> mainDeck)
     {
         List<Card> copyOfMainDeck = new ArrayList<>(mainDeck);
         if(aiDeckAndHand.size() == 0) //no Cards in hand
@@ -180,16 +177,8 @@ public class GameAI
         return -1;
     }
 
-    public boolean choosePlusOrMinus(int aiScore, Card plusMinusCard)
+    boolean choosePlusOrMinus()
     {
         return this.plusOrMinus;
     }
-    public Card testGetCard()
-    {
-        if(aiDeckAndHand.size() == 0)
-            return null;
-
-        return  aiDeckAndHand.remove(0);
-    }
-
 }
