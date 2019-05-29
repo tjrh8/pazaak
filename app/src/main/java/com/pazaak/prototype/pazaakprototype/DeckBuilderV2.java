@@ -8,8 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DeckBuilderV2 extends AppCompatActivity
@@ -35,7 +33,7 @@ public class DeckBuilderV2 extends AppCompatActivity
     static int arraySize= 18;
     public int count = 0;
     public String countText = "deckCount";
-    public boolean checked[] = new boolean[arraySize];
+    public boolean[] checked = new boolean[arraySize];
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -51,16 +49,12 @@ public class DeckBuilderV2 extends AppCompatActivity
     protected void setChecked()
     {
         Bundle extras = getIntent().getExtras();
-        boolean temp[];
+        boolean[] temp;
         if(extras != null) {
             if (extras.containsKey("cards") && (temp = extras.getBooleanArray("cards")) != null) {
                 System.arraycopy(temp, 0, checked, 0, arraySize);
-                //for (int i = 0; i < arraySize; i++)
-                    //checked[i] = temp[i];
-
             }
-            else
-            {
+            else {
                 for (int i = 0; i < arraySize; i++)
                     checked[i] = false;
             }
